@@ -1,0 +1,75 @@
+% q2 part c
+theta_inf = 25;
+theta_die = 240;
+v = .8;
+lamda = .48;
+c = 1855;
+h = 60;
+P = .2202;
+A = 1.1 * 10^-5;
+row = 960; 
+x = 0:.1:19;
+
+k = lamda / (row * c);
+v1 = v/(2*k);
+v2 = (h*P)/(lamda*A);
+
+block = (v1 - sqrt( (v1^2 +v2))) *x;   
+theta = theta_inf + (theta_die - theta_inf) .* exp(block);
+
+figure(1)
+plot(x,theta)
+xlabel('Distance (meters)')
+ylabel('Temperature (degrees C)')
+title('HDPE Temperature vs Distance')
+%%
+% part d h*2
+
+theta_inf = 25;
+theta_die = 240;
+v = .8;
+lamda = .48;
+c = 1855;
+h = 120;
+P = .2202;
+A = 1.1 * 10^-5;
+row = 960; 
+x = 0:.1:19;
+
+k = lamda / (row * c);
+v1 = v/(2*k);
+v2 = (h*P)/(lamda*A);
+
+block = (v1 - sqrt( (v1^2 +v2))) *x;   
+theta = theta_inf + (theta_die - theta_inf) .* exp(block);
+
+figure(2)
+plot(x,theta)
+xlabel('Distance (meters)')
+ylabel('Temperature (degrees C)')
+title('HDPE Temperature vs Distance h*2')
+%%
+% part d 
+theta_inf = 25;
+theta_die = 240;
+v = 1.6;
+lamda = .48;
+c = 1855;
+h = 120;
+P = .2202;
+A = 1.1 * 10^-5;
+row = 960; 
+x = 0:.1:19;
+
+k = lamda / (row * c);
+v1 = v/(2*k);
+v2 = (h*P)/(lamda*A);
+
+block = (v1 - sqrt( (v1^2 +v2))) *x;   
+theta = theta_inf + (theta_die - theta_inf) .* exp(block);
+
+figure(3)
+plot(x,theta)
+xlabel('Distance (meters)')
+ylabel('Temperature (degrees C)')
+title('HDPE Temperature vs Distance v&h*2')
